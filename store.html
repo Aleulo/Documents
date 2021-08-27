@@ -5,6 +5,17 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <style>
+/* the future posible colors
+:root {
+--bg: #1a1e2d;
+--green: #a5ea9b;
+--pink: #ff61d8;
+--blue: #569cfa;
+--orange: #ffcc81;
+--cyan: #7ed1e2;
+}
+*/
+
 * {
   box-sizing: border-box;
 }
@@ -12,15 +23,25 @@
 body {
   font-family: Arial, Helvetica, sans-serif;
   margin: 0;
+  background-color: #1a1e2d;
 }
 
 /* Style the header */
 header {
-  background-color: #f1f1f1;
+  /* rewrite this part put inside id */
+  /* till here */
   padding: 30px;
   text-align: center;
   font-size: 35px;
 }
+
+#header-img {
+  background-image: url("https://i.redd.it/yq60mm90a5361.png");
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
 
 /* Style the top navigation bar */
 nav {
@@ -31,7 +52,7 @@ nav {
 nav a {
   float: right;
   display: block;
-  color: black;
+  color: white;
   text-align: center;
   padding: 14px 16px;
   text-decoration: none;
@@ -70,11 +91,19 @@ footer {
     -webkit-flex-direction: column;
     flex-direction: column;
   }
+
+/* the links stops floating left */
+  .nav a {
+    float: none;
+    display: block;
+    text-align: left;
+  }
+
 }
 </style>
 </head>
 <body>
-<header class="header">
+<header class="header" id="header-img">
   <nav>
     <a href="#">Link</a>
     <a href="#">Link</a>
