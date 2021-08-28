@@ -20,10 +20,12 @@
   box-sizing: border-box;
 }
 
-body {
+
+body, html {
   font-family: Arial, Helvetica, sans-serif;
   margin: 0;
-  background-color: #1a1e2d;
+  background-color: #2e1889;
+  height: 100%;
 }
 
 /* Style the header */
@@ -33,14 +35,26 @@ header {
   padding: 30px;
   text-align: center;
   font-size: 35px;
+  height: 100%;
 }
 
 #header-img {
-  background-image: url("https://i.redd.it/yq60mm90a5361.png");
+  background-image: url("file:///Users/sashka/Documents/soviet.png");
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
+  width: 100%;
+  height: 100%;
 }
+
+/* logo id, position is absolute and properties move to top and left*/
+#logo {
+  position: absolute;
+  top: 30px;
+  left: 30px;
+  border-radius: 35%;
+}
+
 
 
 /* Style the top navigation bar */
@@ -73,8 +87,9 @@ nav a:hover {
 .column {
   -webkit-flex: 1;
   -ms-flex: 1;
-  flex: 1;
+  flex-grow: 1;
   padding: 30px;
+  margin: 5px; /* just test */
   height: 300px;/*height: 300px; /* Should be removed. Only for demonstration */
 }
 
@@ -86,17 +101,18 @@ footer {
 }
 
 /* Responsive layout - makes the three columns stack on top of each other instead of next to each other */
-@media (max-width: 600px) {
+@media (max-width: 800px) {
   .row {
     -webkit-flex-direction: column;
     flex-direction: column;
   }
 
-/* the links stops floating left */
-  .nav a {
+/* the links stops floating left
+and becomes a column and text goes left*/
+  nav a {
     float: none;
     display: block;
-    text-align: left;
+    text-align: center;
   }
 
 }
@@ -104,20 +120,25 @@ footer {
 </head>
 <body>
 <header class="header" id="header-img">
+  <!-- Logo image ; container 100/100px , Also a link to the main page-->
+  <a href="#">
+    <img src="file:///Users/sashka/Documents/cat.jpg" id="logo" width="100px" height="100px">
+  </a>
   <nav>
-    <a href="#">Link</a>
-    <a href="#">Link</a>
-    <a href="#">Link</a>
+    <a href="#">Shop</a>
+    <a href="#">About</a>
+    <a href="#">Contact</a>
+    <a href="#">Register</a>
   </nav>
-  <h2>Header</h2>
 </header>
 <!-- The items that are selling in the store -->
-<section>
-<div class="row">
-  <div class="column" style="background-color:#aaa;">Column</div>
-  <div class="column" style="background-color:#bbb;">Column</div>
-  <div class="column" style="background-color:#ccc;">Column</div>
-</div>
+<section class="row">
+  <img src="file:///Users/sashka/Documents/kosmos.jpg" class="column">
+  <img src="file:///Users/sashka/Documents/made.jpg" class="column">
+  <img src="file:///Users/sashka/Documents/hammer.jpg" class="column">
+  <img src="file:///Users/sashka/Documents/red.jpg" class="column">
+  <img src="file:///Users/sashka/Documents/green.jpg" class="column">
+  <img src="file:///Users/sashka/Documents/no.jpg" class="column">
 </section>
 
 <footer class="footer">
