@@ -55,6 +55,13 @@ header {
   border-radius: 35%;
 }
 
+/* Caption for Logo element */
+#log_Caption {
+  position: absolute;
+  top: 70px;
+  left: 40px;
+}
+
 
 
 /* Style the top navigation bar */
@@ -77,10 +84,16 @@ nav a:hover {
   background-color: #ddd;
 }
 
+/* Behavior of the h2 elements */
+header h2,h3 {
+  text-align: center;
+}
+
 /* Container for flexboxes */
 .row {
   display: -webkit-flex;
   display: flex;
+  justify-content: space-around;
 }
 
 /* Create three equal columns that sits next to each other */
@@ -91,6 +104,17 @@ nav a:hover {
   padding: 30px;
   margin: 5px; /* just test */
   height: 300px;/*height: 300px; /* Should be removed. Only for demonstration */
+}
+
+/* container div for each image */
+section div {
+  width: 30%
+  height: auto;
+}
+
+/* images of the section element */
+section img {
+
 }
 
 /* Style the footer */
@@ -122,7 +146,8 @@ and becomes a column and text goes left*/
 <header class="header" id="header-img">
   <!-- Logo image ; container 100/100px , Also a link to the main page-->
   <a href="#">
-    <img src="file:///Users/sashka/Documents/cat.jpg" id="logo" width="100px" height="100px">
+    <img src="file:///Users/sashka/Documents/cat.jpg" id="logo"  width="100px" height="100px">
+    <h3 id="log_Caption">Loki</h3>
   </a>
   <nav>
     <a href="#">Shop</a>
@@ -130,15 +155,30 @@ and becomes a column and text goes left*/
     <a href="#">Contact</a>
     <a href="#">Register</a>
   </nav>
+  <h2>10% off storewide</h2>
+  <h5>Use code: <kbd>back2u$$r</kbd></h5>
 </header>
+  <h2>New Arrivals</h2>
 <!-- The items that are selling in the store -->
 <section class="row">
-  <img src="file:///Users/sashka/Documents/kosmos.jpg" class="column">
-  <img src="file:///Users/sashka/Documents/made.jpg" class="column">
-  <img src="file:///Users/sashka/Documents/hammer.jpg" class="column">
-  <img src="file:///Users/sashka/Documents/red.jpg" class="column">
-  <img src="file:///Users/sashka/Documents/green.jpg" class="column">
-  <img src="file:///Users/sashka/Documents/no.jpg" class="column">
+ <div class="column">
+  <img src="file:///Users/sashka/Documents/kosmos.jpg" >
+</div>
+<div class="column">
+  <img src="file:///Users/sashka/Documents/made.jpg" >
+</div>
+<div class="column">
+  <img src="file:///Users/sashka/Documents/hammer.jpg" >
+</div>
+<div class="column">
+  <img src="file:///Users/sashka/Documents/red.jpg" >
+</div>
+<div class="column">
+  <img src="file:///Users/sashka/Documents/green.jpg">
+</div>
+<div class="column">
+  <img src="file:///Users/sashka/Documents/no.jpg">
+</div>
 </section>
 
 <footer class="footer">
