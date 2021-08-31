@@ -26,6 +26,7 @@ body, html {
   margin: 0;
   background-color: #2e1889;
   height: 100%;
+  color: white;
 }
 
 /* Style the header */
@@ -89,48 +90,126 @@ header h2,h3 {
   text-align: center;
 }
 
+/* header that presents the items */
+#presentationHeader {
+  padding-left: 40px;
+}
+
 /* Container for flexboxes */
 .row {
   display: -webkit-flex;
   display: flex;
-  justify-content: space-around;
+  flex-wrap: wrap;
 }
 
 /* Create three equal columns that sits next to each other */
-.column {
-  -webkit-flex: 1;
-  -ms-flex: 1;
-  flex-grow: 1;
-  padding: 30px;
-  margin: 5px; /* just test */
-  height: 300px;/*height: 300px; /* Should be removed. Only for demonstration */
+.flex-item {
+  padding: 10px;
+  flex: 30%;
 }
 
 /* container div for each image */
 section div {
-  width: 30%
-  height: auto;
+  width: 30%;
+  height: 40%;
+  /* let the item to have a space between each other */
+  padding-bottom: 50px;
 }
 
 /* images of the section element */
 section img {
+  width: 100%;
+  height: 100%;
+  /* use this approach because of the different quality of the pictures
+  in the future it would be changed */
+  max-height: 400px;
+  min-height: 400px;
+}
 
+/* Behavior of the div of view all button */
+#viewAll {
+  border: none;
+  text-align: center;
+  cursor: pointer;
+  display: flex;
+  justify-content: center;
+   align-items: center;
+   padding-bottom: 20px;
+}
+
+/* Behavior of the button _ >> needs more work because outer space is a link*/
+#viewAll > button {
+  background-color: #6a9dc0;
+  color: white;
+  border: none;
+  margin: 20px;
+  font-size: 24px;
+}
+
+/* article behavior */
+article {
+  font-size: 30px;
+  text-align: center;
+  padding: 80px;
+}
+
+/* video element */
+video {
+  width: 50%;
+  max-height: 600px;
+}
+
+/* video centered */
+#vidCenter {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 40px;
 }
 
 /* Style the footer */
 footer {
-  background-color: #f1f1f1;
-  padding: 10px;
+  background-color: #1f134c;
+  padding: 100px;/* test */
   text-align: center;
+  position: relative;
 }
 
-/* Responsive layout - makes the three columns stack on top of each other instead of next to each other */
+/* Responsive layout - makes columns stack on top of each other instead of next to each other */
 @media (max-width: 800px) {
-  .row {
+  .row{
+
     -webkit-flex-direction: column;
     flex-direction: column;
   }
 
+/* each item becomes 90% wide */
+  .flex-item {
+    flex: 90%;
+  }
+
+  /* container div for each image */
+  section div {
+
+    width: 100%;
+    height: 80%;
+    /* let the item to have a space between each other */
+    padding-bottom: 50px;
+  }
+
+  /* images of the section element */
+  section img {
+    width: 100%;
+    height: 100%;
+    /* use this approach because of the different quality of the pictures
+    in the future it would be changed */
+    max-height: 400px;
+    min-height: 400px;
+  }
+
+  #flexitem h3 {
+    margin-top: 40px;
+    margin-bottom: 40px;
+  }
 /* the links stops floating left
 and becomes a column and text goes left*/
   nav a {
@@ -138,6 +217,11 @@ and becomes a column and text goes left*/
     display: block;
     text-align: center;
   }
+
+video {
+  width: 90%;
+  height: auto;
+}
 
 }
 </style>
@@ -153,33 +237,66 @@ and becomes a column and text goes left*/
     <a href="#">Shop</a>
     <a href="#">About</a>
     <a href="#">Contact</a>
-    <a href="#">Register</a>
   </nav>
   <h2>10% off storewide</h2>
   <h5>Use code: <kbd>back2u$$r</kbd></h5>
 </header>
-  <h2>New Arrivals</h2>
+<article>Made with love in Seattle city from all natural eco-friendly materials</article>
+  <h4 id="presentationHeader">New Arrivals</h4>
 <!-- The items that are selling in the store -->
 <section class="row">
- <div class="column">
+ <div class="flex-item">
+  <a href="#">
   <img src="file:///Users/sashka/Documents/kosmos.jpg" >
+ </a>
+  <h3 id="price1">20.99$</h3>
 </div>
-<div class="column">
+<div class="flex-item">
+  <a href="#">
   <img src="file:///Users/sashka/Documents/made.jpg" >
+</a>
+  <h3 id="price2">30.99$</h3>
 </div>
-<div class="column">
+<div class="flex-item">
+  <a href="#">
   <img src="file:///Users/sashka/Documents/hammer.jpg" >
+</a>
+  <h3 id="price3">20.99$</h3>
 </div>
-<div class="column">
+<div class="flex-item">
+  <a href="#">
   <img src="file:///Users/sashka/Documents/red.jpg" >
+</a>
+  <h3 id="price4">20.99$</h3>
 </div>
-<div class="column">
+<div class="flex-item">
+  <a href="#">
   <img src="file:///Users/sashka/Documents/green.jpg">
+</a>
+  <h3 id="price5">25.99$</h3>
 </div>
-<div class="column">
+<div class="flex-item">
+  <a href="#">
   <img src="file:///Users/sashka/Documents/no.jpg">
+</a>
+  <h3 id="price6">10.99$</h3>
 </div>
 </section>
+<!-- button to view full inventory -->
+<div id="viewAll">
+  <button href="#" >View All</button>
+</div>
+
+<!-- Article element -->
+<article>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras sagittis lacinia ligula nec iaculis. Nulla sed imperdiet dui, vitae tempus ipsum. Vivamus faucibus libero ut elit rutrum feugiat. Sed sit amet elementum ante, nec gravida augue. Nunc condimentum a turpis vel egestas. Nam consectetur nibh arcu. Morbi faucibus viverra nisl, at maximus massa ultricies eget. In hac habitasse platea dictumst. In elit mauris, commodo sit amet nulla ac, pretium tincidunt eros. Proin faucibus aliquam lorem vel vestibulum. Aenean ut blandit odio.
+</article>
+
+<!-- video element -->
+<div id="vidCenter">
+<video width="400" controls>
+  <source src="file:///Users/sashka/Documents/anime.mov">
+</video>
+</div>
 
 <footer class="footer">
   <p>Footer</p>
