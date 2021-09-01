@@ -166,12 +166,68 @@ video {
   margin-bottom: 40px;
 }
 
+/* form class container */
+.form {
+display: flex;
+flex-flow: row wrap;
+justify-content: center;
+margin-bottom: 40px;
+}
+
+h2{
+  text-align: center;
+}
+
+.form label {
+margin: 5px 10px 5px 0;
+}
+
+.form input {
+vertical-align: middle;
+margin: 5px 10px 5px 0;
+padding: 10px;
+background-color: #fff;
+border: 1px solid #ddd;
+}
+
+.form button {
+padding: 10px 20px;
+background-color: dodgerblue;
+border: 1px solid #ddd;
+color: white;
+cursor: pointer;
+}
+
+.form-inline button:hover {
+background-color: royalblue;
+}
+
 /* Style the footer */
 footer {
   background-color: #1f134c;
-  padding: 100px;/* test */
-  text-align: center;
-  position: relative;
+  margin-top: 30px;
+  padding: 20px;
+}
+
+/* li behavior */
+li {
+  list-style: none;
+}
+
+footer > ul {
+  display: flex;
+  justify-content: flex-end;
+}
+
+footer > ul > li {
+  padding: 0 10px;
+}
+
+footer > span {
+  margin-top: 5px;
+  display: flex;
+  justify-content: flex-end;
+  font-size: 0.9em;
 }
 
 /* Responsive layout - makes columns stack on top of each other instead of next to each other */
@@ -223,6 +279,15 @@ video {
   height: auto;
 }
 
+.form input {
+    margin: 10px 0;
+  }
+
+.form {
+    flex-direction: column;
+    padding: 0px 20px 0px 20px;
+  }
+
 }
 </style>
 </head>
@@ -234,9 +299,9 @@ video {
     <h3 id="log_Caption">Loki</h3>
   </a>
   <nav>
-    <a href="#">Shop</a>
-    <a href="#">About</a>
-    <a href="#">Contact</a>
+    <a href="#shop">Shop</a>
+    <a href="#about">About</a>
+    <a href="#contact">Contact</a>
   </nav>
   <h2>10% off storewide</h2>
   <h5>Use code: <kbd>back2u$$r</kbd></h5>
@@ -244,7 +309,7 @@ video {
 <article>Made with love in Seattle city from all natural eco-friendly materials</article>
   <h4 id="presentationHeader">New Arrivals</h4>
 <!-- The items that are selling in the store -->
-<section class="row">
+<section id="shop" class="row">
  <div class="flex-item">
   <a href="#">
   <img src="file:///Users/sashka/Documents/kosmos.jpg" >
@@ -288,7 +353,7 @@ video {
 </div>
 
 <!-- Article element -->
-<article>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras sagittis lacinia ligula nec iaculis. Nulla sed imperdiet dui, vitae tempus ipsum. Vivamus faucibus libero ut elit rutrum feugiat. Sed sit amet elementum ante, nec gravida augue. Nunc condimentum a turpis vel egestas. Nam consectetur nibh arcu. Morbi faucibus viverra nisl, at maximus massa ultricies eget. In hac habitasse platea dictumst. In elit mauris, commodo sit amet nulla ac, pretium tincidunt eros. Proin faucibus aliquam lorem vel vestibulum. Aenean ut blandit odio.
+<article id="about">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras sagittis lacinia ligula nec iaculis. Nulla sed imperdiet dui, vitae tempus ipsum. Vivamus faucibus libero ut elit rutrum feugiat. Sed sit amet elementum ante, nec gravida augue. Nunc condimentum a turpis vel egestas. Nam consectetur nibh arcu. Morbi faucibus viverra nisl, at maximus massa ultricies eget. In hac habitasse platea dictumst. In elit mauris, commodo sit amet nulla ac, pretium tincidunt eros. Proin faucibus aliquam lorem vel vestibulum. Aenean ut blandit odio.
 </article>
 
 <!-- video element -->
@@ -297,9 +362,26 @@ video {
   <source src="file:///Users/sashka/Documents/anime.mov">
 </video>
 </div>
+  <h2>Subscribe to our Newsletter</h2>
+<!-- form element -->
+<form id="form" class="form" action="https://www.freecodecamp.com/email-submit">
+    <label for="name">Name:</label>
+    <input type="text" placeholder="Name" name="name" required>
+    <label for="email">Email:</label>
+    <input id="email" type="email" placeholder="email" name="email" required>
 
-<footer class="footer">
-  <p>Footer</p>
+  <label for="subscribe">Subscribe</label>
+      <input type="checkbox" checked="checked" name="subscribe">
+    <button type="submit" value="Subscribe">Submit</button>
+</form>
+
+<footer id="contact">
+  <ul>
+    <li><a href="#">Privacy</a></li>
+    <li><a href="#">Terms</a></li>
+    <li><a href="#">Contact</a></li>
+  </ul>
+      <span>Copyright 2021, Loki Store</span>
 </footer>
 
 </body>
